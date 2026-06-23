@@ -8,6 +8,14 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 const journeyData = ['egypt', 'japan', 'usa', 'nz', 'bahrain'] as const;
 type JourneyKey = typeof journeyData[number];
 
+const imageMap: Record<JourneyKey, string> = {
+  egypt: '/images/جامعة قناة السويس مصر.png',
+  japan: '/images/kumamoto university japan.png',
+  usa: '/images/University of Utah.png',
+  nz: '/images/University of Otago.png',
+  bahrain: '/images/Arabian Gulf University.png',
+};
+
 export default function JourneySection() {
   const { t, language } = useLanguage();
   const [activeTab, setActiveTab] = useState<JourneyKey>('egypt');
@@ -94,7 +102,7 @@ export default function JourneySection() {
               }}>
                 <Image
                   key={activeTab} // Force re-render for animation
-                  src={`/images/journey-${activeTab}.jpg`}
+                  src={imageMap[activeTab]}
                   alt={t(`journey.${activeTab}`)}
                   fill
                   style={{ objectFit: 'cover' }}

@@ -7,7 +7,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 export default function Publications() {
   const { t, language } = useLanguage();
 
-  const pubs = ['pub1', 'pub2', 'pub3'];
+  const pubs = ['pub1', 'pub2', 'pub3', 'pub4', 'pub5'];
 
   return (
     <section id="publications" style={{ background: 'var(--white)' }}>
@@ -30,7 +30,7 @@ export default function Publications() {
         <div>
           {pubs.map((pub, i) => (
             <ScrollReveal key={pub} delay={i + 1}>
-              <a href="#" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <a href={t(`publications.${pub}link`)} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="pub-item">
                   <div style={{
                     display: 'grid',
@@ -54,8 +54,11 @@ export default function Publications() {
                         fontWeight: 600,
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '4px'
                       }}>
-                        {t(`publications.${pub}citations`)}
+                        Read <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                       </span>
                     </div>
 
@@ -73,8 +76,15 @@ export default function Publications() {
                         fontSize: '15px',
                         color: 'var(--text-secondary)',
                         fontStyle: 'italic',
+                        marginBottom: '4px'
                       }}>
                         {t(`publications.${pub}journal`)}
+                      </div>
+                      <div style={{
+                        fontSize: '14px',
+                        color: 'var(--text-muted)',
+                      }}>
+                        {t(`publications.${pub}authors`)}
                       </div>
                     </div>
                   </div>

@@ -77,7 +77,7 @@ export default function HeroSection() {
               }} />
               
               <Image
-                src="/images/dr-khaled-formal.png"
+                src="/images/dr-khaled-casual.png"
                 alt="Professor Khaled Fathi Greish"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center top' }}
