@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import LanguageToggle from '@/components/ui/LanguageToggle';
 
+import Link from 'next/link';
+
 export default function Navbar() {
   const { t, language } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
@@ -16,11 +18,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: '#about', label: t('nav.about') },
-    { href: '#research', label: t('nav.research') },
-    { href: '#publications', label: t('nav.publications') },
-    { href: '#journey', label: t('nav.journey') },
-    { href: '#collaborations', label: t('nav.collaborations') },
+    { href: '/', label: t('nav.home') },
+    { href: '/#about', label: t('nav.aboutRg') },
+    { href: '/#leadership', label: t('nav.leadership') },
+    { href: '/technologies', label: t('nav.technologies') },
+    { href: '/about-dr-khaled', label: t('nav.aboutDr') },
   ];
 
   return (
@@ -48,7 +50,7 @@ export default function Navbar() {
         justifyContent: 'space-between',
       }}>
         {/* Logo */}
-        <a href="#" style={{
+        <Link href="/" style={{
           textDecoration: 'none',
           display: 'flex',
           alignItems: 'center',
@@ -60,16 +62,16 @@ export default function Navbar() {
             lineHeight: 1.2,
           }}>
             <span style={{
-              fontWeight: 600,
-              fontSize: '18px',
+              fontWeight: 700,
+              fontSize: '22px',
               color: 'var(--text)',
-              fontFamily: language === 'ar' ? 'var(--font-cairo)' : 'var(--font-outfit)',
-              letterSpacing: '-0.02em',
+              fontFamily: 'var(--font-outfit)',
+              letterSpacing: '-0.04em',
             }}>
-              {language === 'ar' ? 'د. خالد جريش' : 'Dr. Khaled Greish'}
+              RG Nano
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <div style={{
@@ -83,7 +85,7 @@ export default function Navbar() {
             alignItems: 'center',
           }}>
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="nav-link"
@@ -99,7 +101,7 @@ export default function Navbar() {
                 onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
           <LanguageToggle />
@@ -167,7 +169,7 @@ export default function Navbar() {
           gap: '16px',
         }}>
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
@@ -180,7 +182,7 @@ export default function Navbar() {
               }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>

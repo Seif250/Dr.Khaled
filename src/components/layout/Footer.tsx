@@ -1,23 +1,22 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
   const { t, language } = useLanguage();
 
   const quickLinks = [
-    { href: '#about', label: t('nav.about') },
-    { href: '#research', label: t('nav.research') },
-    { href: '#publications', label: t('nav.publications') },
-    { href: '#journey', label: t('nav.journey') },
+    { href: '/', label: t('nav.home') },
+    { href: '/#about', label: t('nav.aboutRg') },
+    { href: '/technologies', label: t('nav.technologies') },
+    { href: '/about-dr-khaled', label: t('nav.aboutDr') },
   ];
 
-  const academicLinks = [
-    { href: 'https://scholar.google.com', label: 'Google Scholar' },
-    { href: 'https://researchgate.net', label: 'ResearchGate' },
-    { href: 'https://orcid.org', label: 'ORCID' },
-    { href: 'https://linkedin.com', label: 'LinkedIn' },
+  const techLinks = [
+    { href: '/technologies/nano-silver', label: t('tech.nanoSilver') },
+    { href: '/technologies/nano-copper', label: t('tech.nanoCopper') },
   ];
 
   return (
@@ -40,13 +39,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{
-              fontWeight: 600,
-              fontSize: '20px',
-              fontFamily: language === 'ar' ? 'var(--font-cairo)' : 'var(--font-outfit)',
+              fontWeight: 700,
+              fontSize: '24px',
+              fontFamily: 'var(--font-outfit)',
               marginBottom: '24px',
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.04em',
             }}>
-              {language === 'ar' ? 'د. خالد فتحي جريش' : 'Dr. Khaled F. Greish'}
+              RG Nano
             </div>
             <p style={{
               color: 'var(--text-secondary)',
@@ -54,10 +53,7 @@ export default function Footer() {
               lineHeight: 1.8,
               maxWidth: '280px',
             }}>
-              {language === 'ar'
-                ? 'تحويل علاج السرطان من خلال أبحاث طب النانو المبتكرة وأنظمة توصيل الأدوية الذكية.'
-                : 'Transforming cancer treatment through innovative nanomedicine research and intelligent drug delivery systems.'
-              }
+              {t('rgnano.heroDesc')}
             </p>
           </div>
 
@@ -71,11 +67,11 @@ export default function Footer() {
               color: 'var(--text)',
               marginBottom: '24px',
             }}>
-              {t('footer.quickLinks')}
+              Company
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {quickLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   style={{
@@ -89,12 +85,12 @@ export default function Footer() {
                   onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
 
-          {/* Academic */}
+          {/* Technologies */}
           <div>
             <h3 style={{
               fontSize: '13px',
@@ -104,26 +100,25 @@ export default function Footer() {
               color: 'var(--text)',
               marginBottom: '24px',
             }}>
-              {t('footer.research')}
+              {t('nav.technologies')}
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {academicLinks.map((link) => (
-                <a
-                  key={link.label}
+              {techLinks.map((link) => (
+                <Link
+                  key={link.href}
                   href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   style={{
                     textDecoration: 'none',
                     color: 'var(--text-secondary)',
                     fontSize: '15px',
                     transition: 'color 0.3s ease',
+                    fontFamily: language === 'ar' ? 'var(--font-cairo)' : 'var(--font-outfit)',
                   }}
                   onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -138,7 +133,7 @@ export default function Footer() {
               color: 'var(--text)',
               marginBottom: '24px',
             }}>
-              {t('footer.connect')}
+              Contact Us
             </h3>
             <div>
               <p style={{
@@ -147,13 +142,10 @@ export default function Footer() {
                 lineHeight: 1.7,
                 marginBottom: '16px',
               }}>
-                {language === 'ar'
-                  ? 'جامعة الخليج العربي، كلية الطب، البحرين'
-                  : 'Arabian Gulf University, College of Medicine, Bahrain'
-                }
+                Have questions about our technologies or partnership opportunities? Reach out to our team.
               </p>
               <a
-                href="mailto:contact@khaledgreish.com"
+                href="mailto:contact@rgnano.com"
                 style={{
                   color: 'var(--text)',
                   textDecoration: 'none',
@@ -163,7 +155,7 @@ export default function Footer() {
                   paddingBottom: '2px',
                 }}
               >
-                contact@khaledgreish.com
+                contact@rgnano.com
               </a>
             </div>
           </div>
@@ -183,13 +175,13 @@ export default function Footer() {
             color: 'var(--text-muted)',
             fontSize: '14px',
           }}>
-            {t('footer.rights')}
+            © {new Date().getFullYear()} RG Nano. All rights reserved.
           </p>
           <div style={{
             color: 'var(--text-muted)',
             fontSize: '14px',
           }}>
-            {t('footer.tagline')}
+            Pioneering Precision Medicine
           </div>
         </div>
       </div>

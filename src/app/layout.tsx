@@ -16,13 +16,17 @@ const cairo = Cairo({
   weight: ['300', '400', '500', '600', '700', '800'],
 });
 
+import { LanguageProvider } from '@/context/LanguageContext';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+
 export const metadata: Metadata = {
-  title: "Prof. Khaled Fathi Greish — Nanomedicine Researcher",
-  description: "Professor Khaled Fathi Greish is a globally recognized nanomedicine researcher ranked among the Top 2% of Scientists Worldwide. His work focuses on intelligent drug delivery systems and innovative cancer treatment solutions.",
-  keywords: "Khaled Greish, nanomedicine, cancer treatment, drug delivery, nanoparticles, EPR effect, Arabian Gulf University",
+  title: "RG Nano — Transforming The Future of Therapeutics",
+  description: "RG Nano is an advanced research and development company pioneering precision nanomedicine and intelligent drug delivery systems to address the world's most challenging diseases.",
+  keywords: "RG Nano, nanomedicine, cancer treatment, drug delivery, nanoparticles, targeted therapy",
   openGraph: {
-    title: "Prof. Khaled Fathi Greish — Shaping The Future Of Cancer Treatment",
-    description: "Globally recognized nanomedicine researcher ranked among the Top 2% of Scientists Worldwide.",
+    title: "RG Nano — Advanced Nanomedicine",
+    description: "Pioneering precision nanomedicine and intelligent drug delivery systems.",
     type: "website",
   },
 };
@@ -35,7 +39,11 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
       <body className={`${outfit.variable} ${cairo.variable}`}>
-        {children}
+        <LanguageProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );
