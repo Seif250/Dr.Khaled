@@ -10,7 +10,7 @@ export default function PersonalVision() {
 
   return (
     <section style={{
-      background: 'linear-gradient(135deg, #0a1628 0%, #0f2139 40%, #162a4a 100%)',
+      background: 'linear-gradient(135deg, #071426 0%, #0C1E3A 40%, #132D54 100%)',
       position: 'relative',
       overflow: 'hidden',
     }}>
@@ -18,13 +18,13 @@ export default function PersonalVision() {
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'radial-gradient(ellipse at 30% 50%, rgba(14,165,233,0.08) 0%, transparent 60%)',
+        background: 'radial-gradient(ellipse at 30% 50%, rgba(14,165,164,0.08) 0%, transparent 60%)',
         pointerEvents: 'none',
       }} />
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'radial-gradient(ellipse at 70% 50%, rgba(212,168,83,0.05) 0%, transparent 60%)',
+        background: 'radial-gradient(ellipse at 70% 50%, rgba(212,166,63,0.05) 0%, transparent 60%)',
         pointerEvents: 'none',
       }} />
 
@@ -47,7 +47,7 @@ export default function PersonalVision() {
               <div style={{
                 position: 'absolute',
                 inset: '-20px',
-                background: 'radial-gradient(ellipse, rgba(14,165,233,0.15) 0%, transparent 70%)',
+                background: 'radial-gradient(ellipse, rgba(14,165,164,0.15) 0%, transparent 70%)',
                 borderRadius: '50%',
               }} />
               
@@ -72,7 +72,7 @@ export default function PersonalVision() {
                   left: 0,
                   right: 0,
                   height: '50%',
-                  background: 'linear-gradient(to top, rgba(10,22,40,0.8) 0%, transparent 100%)',
+                  background: 'linear-gradient(to top, rgba(7,20,38,0.8) 0%, transparent 100%)',
                 }} />
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function PersonalVision() {
               <div style={{
                 fontSize: '6rem',
                 lineHeight: 0.5,
-                color: 'rgba(14,165,233,0.2)',
+                color: 'rgba(14,165,164,0.2)',
                 fontFamily: "'Playfair Display', serif",
                 marginBottom: '1rem',
               }}>
@@ -105,7 +105,7 @@ export default function PersonalVision() {
                 <p className="font-display" style={{
                   fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)',
                   fontWeight: 700,
-                  background: 'linear-gradient(135deg, #0ea5e9, #06b6d4, #d4a853)',
+                  background: 'linear-gradient(135deg, #0EA5A4, #00D4A6, #D4A63F)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -120,7 +120,7 @@ export default function PersonalVision() {
               <div style={{
                 width: '60px',
                 height: '2px',
-                background: 'linear-gradient(to right, #0ea5e9, #d4a853)',
+                background: 'linear-gradient(to right, #0EA5A4, #D4A63F)',
                 marginBottom: '2rem',
               }} />
 
@@ -144,7 +144,7 @@ export default function PersonalVision() {
                   height: '48px',
                   borderRadius: '50%',
                   overflow: 'hidden',
-                  border: '2px solid rgba(14,165,233,0.3)',
+                  border: '2px solid rgba(14,165,164,0.3)',
                   position: 'relative',
                 }}>
                   <Image
@@ -164,7 +164,7 @@ export default function PersonalVision() {
                     {t('vision.author')}
                   </div>
                   <div style={{
-                    color: '#0ea5e9',
+                    color: '#0EA5A4',
                     fontSize: '0.75rem',
                     fontWeight: 500,
                   }}>

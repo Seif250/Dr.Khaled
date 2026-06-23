@@ -10,18 +10,18 @@ export default function Publications() {
   const pubs = [
     {
       key: 'pub1',
-      color: '#0ea5e9',
-      journalAbbr: 'JCR',
+      color: '#0EA5A4',
+      gradient: 'linear-gradient(135deg, #0EA5A4, #00D4A6)',
     },
     {
       key: 'pub2',
-      color: '#d4a853',
-      journalAbbr: 'JDT',
+      color: '#00D4A6',
+      gradient: 'linear-gradient(135deg, #00D4A6, #2EC4C3)',
     },
     {
       key: 'pub3',
-      color: '#10b981',
-      journalAbbr: 'CAN',
+      color: '#2EC4C3',
+      gradient: 'linear-gradient(135deg, #2EC4C3, #0EA5A4)',
     },
   ];
 
@@ -39,109 +39,149 @@ export default function Publications() {
           </div>
         </ScrollReveal>
 
+        {/* Horizontal Publication Cards */}
         <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          display: 'flex',
+          flexDirection: 'column',
           gap: '1.5rem',
           marginBottom: '3rem',
+          maxWidth: '900px',
+          margin: '0 auto 3rem',
         }}>
           {pubs.map((pub, i) => (
             <ScrollReveal key={pub.key} delay={i + 1}>
               <div className="card" style={{
                 padding: 0,
                 overflow: 'hidden',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'column',
+                display: 'grid',
+                gridTemplateColumns: 'clamp(140px, 20%, 200px) 1fr',
+                minHeight: '180px',
               }}>
-                {/* Journal visual */}
+                {/* Journal Cover Side */}
                 <div style={{
-                  background: `linear-gradient(135deg, ${pub.color}15, ${pub.color}08)`,
-                  padding: '2rem',
+                  background: pub.gradient,
                   display: 'flex',
+                  flexDirection: 'column',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  borderBottom: `1px solid ${pub.color}15`,
+                  padding: '1.5rem 1rem',
                   position: 'relative',
                   overflow: 'hidden',
-                  minHeight: '140px',
                 }}>
-                  {/* Large abbreviated journal name */}
+                  {/* Decorative circles */}
                   <div style={{
-                    fontSize: '3rem',
-                    fontWeight: 900,
-                    fontFamily: "'Playfair Display', serif",
-                    color: pub.color,
-                    opacity: 0.15,
                     position: 'absolute',
-                  }}>
-                    {pub.journalAbbr}
-                  </div>
+                    top: '-20px',
+                    right: '-20px',
+                    width: '80px',
+                    height: '80px',
+                    borderRadius: '50%',
+                    background: 'rgba(255,255,255,0.1)',
+                  }} />
                   <div style={{
+                    position: 'absolute',
+                    bottom: '-15px',
+                    left: '-15px',
+                    width: '60px',
+                    height: '60px',
+                    borderRadius: '50%',
+                    background: 'rgba(255,255,255,0.08)',
+                  }} />
+
+                  {/* Journal icon */}
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" style={{ marginBottom: '0.75rem', opacity: 0.9 }}>
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                  </svg>
+
+                  <div style={{
+                    color: 'white',
+                    fontSize: '0.65rem',
+                    fontWeight: 600,
                     textAlign: 'center',
-                    position: 'relative',
-                    zIndex: 1,
+                    textTransform: 'uppercase' as const,
+                    letterSpacing: '0.05em',
+                    lineHeight: 1.3,
+                    opacity: 0.9,
                   }}>
-                    <div style={{
-                      fontSize: '0.7rem',
-                      fontWeight: 600,
-                      color: pub.color,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.1em',
-                      marginBottom: '0.25rem',
-                    }}>
-                      {t(`publications.${pub.key}journal`)}
-                    </div>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '1.5rem',
-                      marginTop: '0.75rem',
-                    }}>
-                      <span style={{
-                        padding: '0.35rem 0.75rem',
-                        background: `${pub.color}15`,
-                        borderRadius: '6px',
-                        fontSize: '0.75rem',
-                        fontWeight: 600,
-                        color: pub.color,
-                      }}>
-                        {t(`publications.${pub.key}year`)}
-                      </span>
-                      <span style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.35rem',
-                        fontSize: '0.75rem',
-                        fontWeight: 600,
-                        color: '#64748b',
-                      }}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M3 3v18h18" />
-                          <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
-                        </svg>
-                        {t(`publications.${pub.key}citations`)} {t('publications.citations')}
-                      </span>
-                    </div>
+                    {t(`publications.${pub.key}journal`)}
                   </div>
                 </div>
 
-                {/* Content */}
-                <div style={{ padding: '1.5rem 2rem', flex: 1 }}>
+                {/* Content Side */}
+                <div style={{
+                  padding: '1.5rem 2rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                }}>
+                  {/* Meta row */}
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.75rem',
+                    marginBottom: '0.75rem',
+                    flexWrap: 'wrap',
+                  }}>
+                    {/* Year badge */}
+                    <span style={{
+                      padding: '0.3rem 0.7rem',
+                      background: `${pub.color}12`,
+                      borderRadius: '6px',
+                      fontSize: '0.72rem',
+                      fontWeight: 700,
+                      color: pub.color,
+                    }}>
+                      {t(`publications.${pub.key}year`)}
+                    </span>
+
+                    {/* Citations */}
+                    <span style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.35rem',
+                      fontSize: '0.72rem',
+                      fontWeight: 600,
+                      color: '#64748b',
+                    }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M3 3v18h18" />
+                        <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+                      </svg>
+                      {t(`publications.${pub.key}citations`)} {t('publications.citations')}
+                    </span>
+
+                    {/* Impact Badge */}
+                    <span style={{
+                      padding: '0.25rem 0.6rem',
+                      background: 'linear-gradient(135deg, rgba(212,166,63,0.12), rgba(212,166,63,0.06))',
+                      border: '1px solid rgba(212,166,63,0.2)',
+                      borderRadius: '6px',
+                      fontSize: '0.65rem',
+                      fontWeight: 700,
+                      color: '#D4A63F',
+                      letterSpacing: '0.03em',
+                    }}>
+                      {t(`publications.${pub.key}impact`)}
+                    </span>
+                  </div>
+
+                  {/* Title */}
                   <h3 style={{
                     fontSize: '1rem',
                     fontWeight: 700,
-                    color: '#0a1628',
+                    color: '#071426',
                     lineHeight: 1.4,
-                    marginBottom: '0.75rem',
+                    marginBottom: '0.5rem',
                   }}>
                     {t(`publications.${pub.key}title`)}
                   </h3>
+
+                  {/* Summary */}
                   <p style={{
-                    fontSize: '0.85rem',
+                    fontSize: '0.82rem',
                     color: '#64748b',
-                    lineHeight: 1.7,
+                    lineHeight: 1.6,
                   }}>
                     {t(`publications.${pub.key}summary`)}
                   </p>
@@ -154,7 +194,7 @@ export default function Publications() {
         {/* View All CTA */}
         <ScrollReveal>
           <div style={{ textAlign: 'center' }}>
-            <a href="#" className="btn-primary" style={{ display: 'inline-flex' }}>
+            <a href="#" className="btn-secondary-light" style={{ display: 'inline-flex' }}>
               {t('publications.viewAll')}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />

@@ -12,63 +12,88 @@ export default function HeroSection() {
     { num: t('hero.stat1num'), label: t('hero.stat1label') },
     { num: t('hero.stat2num'), label: t('hero.stat2label') },
     { num: t('hero.stat3num'), label: t('hero.stat3label') },
-    { num: t('hero.stat4num'), label: t('hero.stat4label') },
+    { num: t('hero.stat4num'), label: t('hero.stat4label'), isGold: true },
   ];
 
   return (
     <section id="hero" style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #ffffff 0%, #f0f9ff 30%, #f8fafc 70%, #ffffff 100%)',
+      background: 'linear-gradient(135deg, #071426 0%, #0C1E3A 40%, #071426 80%, #0A1830 100%)',
       position: 'relative',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       overflow: 'hidden',
     }}>
-      <MolecularBackground variant="light" />
+      <MolecularBackground variant="dark" />
 
-      {/* Decorative blobs */}
+      {/* Ambient glow blobs */}
       <div style={{
         position: 'absolute',
-        top: '10%',
-        right: language === 'ar' ? 'auto' : '5%',
-        left: language === 'ar' ? '5%' : 'auto',
-        width: '500px',
-        height: '500px',
-        background: 'radial-gradient(ellipse, rgba(14,165,233,0.06) 0%, transparent 70%)',
+        top: '5%',
+        right: language === 'ar' ? 'auto' : '-5%',
+        left: language === 'ar' ? '-5%' : 'auto',
+        width: '600px',
+        height: '600px',
+        background: 'radial-gradient(ellipse, rgba(14,165,164,0.08) 0%, transparent 70%)',
         borderRadius: '50%',
         pointerEvents: 'none',
       }} />
       <div style={{
         position: 'absolute',
-        bottom: '15%',
-        left: language === 'ar' ? 'auto' : '10%',
-        right: language === 'ar' ? '10%' : 'auto',
-        width: '400px',
-        height: '400px',
-        background: 'radial-gradient(ellipse, rgba(212,168,83,0.04) 0%, transparent 70%)',
+        bottom: '10%',
+        left: language === 'ar' ? 'auto' : '5%',
+        right: language === 'ar' ? '5%' : 'auto',
+        width: '500px',
+        height: '500px',
+        background: 'radial-gradient(ellipse, rgba(0,212,166,0.05) 0%, transparent 70%)',
         borderRadius: '50%',
         pointerEvents: 'none',
+      }} />
+      <div style={{
+        position: 'absolute',
+        top: '40%',
+        left: '50%',
+        width: '800px',
+        height: '800px',
+        background: 'radial-gradient(ellipse, rgba(212,166,63,0.03) 0%, transparent 70%)',
+        borderRadius: '50%',
+        pointerEvents: 'none',
+        transform: 'translateX(-50%)',
       }} />
 
       <div style={{
         maxWidth: '1280px',
         margin: '0 auto',
-        padding: '8rem clamp(1.5rem, 4vw, 3rem) 2rem',
+        padding: '9rem clamp(1.5rem, 4vw, 3rem) 2rem',
         position: 'relative',
         zIndex: 1,
         width: '100%',
       }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))',
-          gap: '3rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
+          gap: 'clamp(2rem, 5vw, 4rem)',
           alignItems: 'center',
         }}>
           {/* Text Content */}
           <div style={{ order: language === 'ar' ? 2 : 1 }}>
             {/* Badge */}
-            <div className="section-badge animate-fade-in-up">
+            <div className="animate-fade-in-up" style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.5rem 1.25rem',
+              background: 'linear-gradient(135deg, rgba(212,166,63,0.15) 0%, rgba(212,166,63,0.05) 100%)',
+              border: '1px solid rgba(212,166,63,0.3)',
+              borderRadius: '100px',
+              fontSize: '0.75rem',
+              fontWeight: 600,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase' as const,
+              color: '#D4A63F',
+              marginBottom: '2rem',
+            }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
               </svg>
@@ -77,40 +102,28 @@ export default function HeroSection() {
 
             {/* Headline */}
             <h1 className="font-display" style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
+              fontSize: 'clamp(2.75rem, 5.5vw, 4.5rem)',
               fontWeight: 800,
-              lineHeight: 1.1,
-              color: '#0a1628',
-              marginBottom: '1.5rem',
+              lineHeight: 1.08,
+              color: '#ffffff',
+              marginBottom: '1.75rem',
               animation: 'fade-in-up 0.8s ease-out 0.2s both',
             }}>
-              {language === 'en' ? (
-                <>
-                  Transforming Cancer Treatment{' '}
-                  <span style={{
-                    background: 'linear-gradient(135deg, #0ea5e9, #06b6d4)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}>Through Nanomedicine</span>
-                </>
-              ) : (
-                <>
-                  تحويل علاج السرطان{' '}
-                  <span style={{
-                    background: 'linear-gradient(135deg, #0ea5e9, #06b6d4)',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    backgroundClip: 'text',
-                  }}>من خلال طب النانو</span>
-                </>
-              )}
+              {t('hero.headline1')}{' '}
+              <span style={{
+                background: 'linear-gradient(135deg, #0EA5A4, #00D4A6)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}>{t('hero.headline2')}</span>
+              <br />
+              {t('hero.headline3')}
             </h1>
 
             {/* Subheadline */}
             <p style={{
               fontSize: 'clamp(1rem, 1.5vw, 1.15rem)',
-              color: '#64748b',
+              color: 'rgba(255,255,255,0.6)',
               lineHeight: 1.8,
               marginBottom: '2.5rem',
               maxWidth: '540px',
@@ -139,47 +152,63 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Portrait */}
+          {/* Portrait — 40% bigger with glow + abstract shape */}
           <div style={{
             order: language === 'ar' ? 1 : 2,
             display: 'flex',
             justifyContent: 'center',
             position: 'relative',
           }}>
-            {/* Organic shape behind */}
-            <div className="animate-float-slow" style={{
+            {/* Abstract Shape Behind */}
+            <svg className="hero-abstract-shape animate-float-slow" viewBox="0 0 500 500" style={{
               position: 'absolute',
-              width: '110%',
-              height: '110%',
-              background: 'linear-gradient(135deg, rgba(14,165,233,0.08) 0%, rgba(212,168,83,0.06) 50%, rgba(6,182,212,0.08) 100%)',
-              borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%',
-              top: '-5%',
-              left: '-5%',
+              width: '140%',
+              height: '140%',
+              top: '-20%',
+              left: '-20%',
               zIndex: 0,
-            }} />
+              pointerEvents: 'none',
+            }}>
+              <defs>
+                <linearGradient id="abstractGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#0EA5A4" stopOpacity="0.15" />
+                  <stop offset="50%" stopColor="#00D4A6" stopOpacity="0.08" />
+                  <stop offset="100%" stopColor="#0EA5A4" stopOpacity="0.12" />
+                </linearGradient>
+              </defs>
+              <path d="M250,50 C350,50 450,120 450,250 C450,350 380,430 280,450 C180,470 80,400 50,280 C20,180 120,50 250,50Z" fill="url(#abstractGrad)" />
+            </svg>
+
+            {/* Second organic shape */}
             <div className="animate-float-medium" style={{
               position: 'absolute',
-              width: '100%',
-              height: '100%',
-              background: 'linear-gradient(225deg, rgba(14,165,233,0.05) 0%, rgba(16,185,129,0.04) 100%)',
+              width: '120%',
+              height: '120%',
+              background: 'linear-gradient(225deg, rgba(14,165,164,0.06) 0%, rgba(0,212,166,0.04) 100%)',
               borderRadius: '40% 60% 70% 30% / 40% 70% 30% 60%',
-              top: '0',
-              left: '0',
+              top: '-10%',
+              left: '-10%',
               zIndex: 0,
             }} />
 
-            {/* Portrait Image */}
-            <div style={{
+            {/* Portrait Image Container */}
+            <div className="hero-portrait-container" style={{
               position: 'relative',
               zIndex: 1,
-              width: 'clamp(280px, 40vw, 420px)',
-              height: 'clamp(350px, 50vw, 520px)',
+              width: 'clamp(340px, 48vw, 560px)',
+              height: 'clamp(420px, 60vw, 680px)',
             }}>
-              <div className="hero-portrait-mask" style={{
+              {/* Glow effect */}
+              <div className="hero-image-glow" />
+
+              {/* Image */}
+              <div style={{
                 width: '100%',
                 height: '100%',
                 overflow: 'hidden',
                 position: 'relative',
+                borderRadius: '30% 70% 60% 40% / 50% 40% 60% 50%',
+                border: '2px solid rgba(14,165,164,0.15)',
               }}>
                 <Image
                   src="/images/dr-khaled-casual.png"
@@ -187,42 +216,62 @@ export default function HeroSection() {
                   fill
                   style={{ objectFit: 'cover', objectPosition: 'center top' }}
                   priority
-                  sizes="(max-width: 768px) 280px, 420px"
+                  sizes="(max-width: 768px) 340px, 560px"
                 />
+                {/* Bottom gradient fade */}
+                <div style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: '40%',
+                  background: 'linear-gradient(to top, rgba(7,20,38,0.8) 0%, transparent 100%)',
+                  pointerEvents: 'none',
+                }} />
               </div>
 
               {/* Decorative orbit ring */}
               <div className="animate-spin-slow" style={{
                 position: 'absolute',
-                width: '120%',
-                height: '120%',
-                top: '-10%',
-                left: '-10%',
-                border: '1px dashed rgba(14,165,233,0.15)',
+                width: '115%',
+                height: '115%',
+                top: '-7.5%',
+                left: '-7.5%',
+                border: '1px dashed rgba(14,165,164,0.15)',
                 borderRadius: '50%',
                 pointerEvents: 'none',
               }} />
 
-              {/* Small floating orbs */}
+              {/* Floating orbs */}
               <div className="animate-float-fast" style={{
                 position: 'absolute',
                 top: '10%',
-                right: '-8%',
-                width: '12px',
-                height: '12px',
+                right: '-5%',
+                width: '14px',
+                height: '14px',
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg, #0ea5e9, #06b6d4)',
-                boxShadow: '0 0 20px rgba(14,165,233,0.4)',
+                background: 'linear-gradient(135deg, #0EA5A4, #00D4A6)',
+                boxShadow: '0 0 25px rgba(14,165,164,0.5)',
               }} />
               <div className="animate-float-medium" style={{
                 position: 'absolute',
-                bottom: '20%',
-                left: '-6%',
+                bottom: '25%',
+                left: '-4%',
+                width: '10px',
+                height: '10px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, #D4A63F, #E2BD6A)',
+                boxShadow: '0 0 20px rgba(212,166,63,0.5)',
+              }} />
+              <div className="animate-float-slow" style={{
+                position: 'absolute',
+                top: '50%',
+                right: '-8%',
                 width: '8px',
                 height: '8px',
                 borderRadius: '50%',
-                background: 'linear-gradient(135deg, #d4a853, #e8c97a)',
-                boxShadow: '0 0 15px rgba(212,168,83,0.4)',
+                background: 'rgba(0,212,166,0.6)',
+                boxShadow: '0 0 15px rgba(0,212,166,0.4)',
               }} />
             </div>
           </div>
@@ -238,36 +287,38 @@ export default function HeroSection() {
         padding: '0 clamp(1.5rem, 4vw, 3rem) 3rem',
         width: '100%',
       }}>
-        <div className="glass" style={{
+        <div className="glass-dark" style={{
           borderRadius: '20px',
           padding: 'clamp(1.5rem, 3vw, 2rem) clamp(1rem, 3vw, 2.5rem)',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
           gap: '1.5rem',
-          boxShadow: '0 10px 40px rgba(10,22,40,0.06)',
           animation: 'fade-in-up 0.8s ease-out 0.8s both',
         }}>
           {stats.map((stat, i) => (
             <div key={i} style={{
               textAlign: 'center',
               padding: '0.5rem',
-              borderRight: i < stats.length - 1 ? '1px solid rgba(14,165,233,0.1)' : 'none',
+              borderRight: i < stats.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
             }}>
               <div style={{
                 fontSize: 'clamp(1.5rem, 2.5vw, 2rem)',
                 fontWeight: 800,
-                background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
+                background: stat.isGold 
+                  ? 'linear-gradient(135deg, #D4A63F, #E2BD6A)' 
+                  : 'linear-gradient(135deg, #0EA5A4, #00D4A6)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
                 marginBottom: '0.25rem',
-                fontFamily: "'Playfair Display', serif",
+                fontFamily: "'Inter', sans-serif",
+                letterSpacing: '-0.02em',
               }}>
                 {stat.num}
               </div>
               <div style={{
                 fontSize: '0.78rem',
-                color: '#64748b',
+                color: 'rgba(255,255,255,0.5)',
                 fontWeight: 500,
               }}>
                 {stat.label}

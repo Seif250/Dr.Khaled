@@ -58,7 +58,7 @@ export default function Navbar() {
             width: '40px',
             height: '40px',
             borderRadius: '12px',
-            background: 'linear-gradient(135deg, #0ea5e9, #06b6d4)',
+            background: 'linear-gradient(135deg, #0EA5A4, #00D4A6)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -77,14 +77,14 @@ export default function Navbar() {
             <span style={{
               fontWeight: 700,
               fontSize: '0.95rem',
-              color: scrolled ? '#0a1628' : '#0a1628',
+              color: scrolled ? '#ffffff' : '#ffffff',
               fontFamily: language === 'ar' ? "'Noto Kufi Arabic', sans-serif" : "'Inter', sans-serif",
             }}>
               {language === 'ar' ? 'د. خالد جريش' : 'Dr. K. Greish'}
             </span>
             <span style={{
               fontSize: '0.65rem',
-              color: '#94a3b8',
+              color: scrolled ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.5)',
               fontWeight: 500,
               letterSpacing: language === 'ar' ? '0' : '0.03em',
             }}>
@@ -110,7 +110,7 @@ export default function Navbar() {
                 href={link.href}
                 style={{
                   textDecoration: 'none',
-                  color: '#475569',
+                  color: 'rgba(255,255,255,0.6)',
                   fontSize: '0.85rem',
                   fontWeight: 500,
                   padding: '0.5rem 0.75rem',
@@ -119,11 +119,11 @@ export default function Navbar() {
                   fontFamily: language === 'ar' ? "'Noto Sans Arabic', sans-serif" : "'Inter', sans-serif",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#0ea5e9';
-                  e.currentTarget.style.background = 'rgba(14,165,233,0.06)';
+                  e.currentTarget.style.color = '#0EA5A4';
+                  e.currentTarget.style.background = 'rgba(14,165,164,0.08)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = '#475569';
+                  e.currentTarget.style.color = 'rgba(255,255,255,0.6)';
                   e.currentTarget.style.background = 'transparent';
                 }}
               >
@@ -158,7 +158,7 @@ export default function Navbar() {
               display: 'block',
               width: '22px',
               height: '2px',
-              background: '#0a1628',
+              background: '#ffffff',
               borderRadius: '1px',
               transition: 'all 0.3s ease',
               transform: mobileOpen ? 'rotate(45deg) translateY(1px)' : 'none',
@@ -167,7 +167,7 @@ export default function Navbar() {
               display: 'block',
               width: '22px',
               height: '2px',
-              background: '#0a1628',
+              background: '#ffffff',
               borderRadius: '1px',
               transition: 'all 0.3s ease',
               opacity: mobileOpen ? 0 : 1,
@@ -176,7 +176,7 @@ export default function Navbar() {
               display: 'block',
               width: '22px',
               height: '2px',
-              background: '#0a1628',
+              background: '#ffffff',
               borderRadius: '1px',
               transition: 'all 0.3s ease',
               transform: mobileOpen ? 'rotate(-45deg) translateY(-1px)' : 'none',
@@ -190,7 +190,7 @@ export default function Navbar() {
         maxHeight: mobileOpen ? '400px' : '0',
         overflow: 'hidden',
         transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-        background: 'rgba(255,255,255,0.95)',
+        background: 'rgba(7,20,38,0.95)',
         backdropFilter: 'blur(20px)',
       }}>
         <div style={{
@@ -206,7 +206,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               style={{
                 textDecoration: 'none',
-                color: '#475569',
+                color: 'rgba(255,255,255,0.7)',
                 fontSize: '0.95rem',
                 fontWeight: 500,
                 padding: '0.75rem 1rem',
@@ -215,12 +215,12 @@ export default function Navbar() {
                 fontFamily: language === 'ar' ? "'Noto Sans Arabic', sans-serif" : "'Inter', sans-serif",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(14,165,233,0.06)';
-                e.currentTarget.style.color = '#0ea5e9';
+                e.currentTarget.style.background = 'rgba(14,165,164,0.1)';
+                e.currentTarget.style.color = '#0EA5A4';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.color = '#475569';
+                e.currentTarget.style.color = 'rgba(255,255,255,0.7)';
               }}
             >
               {link.label}

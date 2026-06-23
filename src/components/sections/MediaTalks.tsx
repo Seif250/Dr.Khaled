@@ -16,8 +16,8 @@ export default function MediaTalks() {
           <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
         </svg>
       ),
-      color: '#0ea5e9',
-      gradient: 'linear-gradient(135deg, #0ea5e9, #38bdf8)',
+      color: '#0EA5A4',
+      gradient: 'linear-gradient(135deg, #0EA5A4, #2EC4C3)',
     },
     {
       key: 'lectures',
@@ -27,8 +27,8 @@ export default function MediaTalks() {
           <path d="M6 12v5c3 3 12 3 12 0v-5" />
         </svg>
       ),
-      color: '#d4a853',
-      gradient: 'linear-gradient(135deg, #d4a853, #e8c97a)',
+      color: '#00D4A6',
+      gradient: 'linear-gradient(135deg, #00D4A6, #0EA5A4)',
     },
     {
       key: 'interviews',
@@ -40,8 +40,8 @@ export default function MediaTalks() {
           <line x1="8" y1="23" x2="16" y2="23" />
         </svg>
       ),
-      color: '#10b981',
-      gradient: 'linear-gradient(135deg, #10b981, #34d399)',
+      color: '#2EC4C3',
+      gradient: 'linear-gradient(135deg, #2EC4C3, #00D4A6)',
     },
     {
       key: 'panels',
@@ -53,8 +53,8 @@ export default function MediaTalks() {
           <path d="M16 3.13a4 4 0 0 1 0 7.75" />
         </svg>
       ),
-      color: '#8b5cf6',
-      gradient: 'linear-gradient(135deg, #8b5cf6, #a78bfa)',
+      color: '#D4A63F',
+      gradient: 'linear-gradient(135deg, #D4A63F, #E2BD6A)',
     },
   ];
 
@@ -118,7 +118,7 @@ export default function MediaTalks() {
                 <h3 style={{
                   fontSize: '1.1rem',
                   fontWeight: 700,
-                  color: '#0a1628',
+                  color: '#071426',
                   marginBottom: '0.75rem',
                 }}>
                   {t(`media.${item.key}`)}

@@ -16,23 +16,23 @@ export default function LanguageToggle() {
         gap: '4px',
         padding: '6px 14px',
         borderRadius: '100px',
-        border: '1.5px solid rgba(14,165,233,0.2)',
-        background: 'rgba(14,165,233,0.05)',
+        border: '1.5px solid rgba(14,165,164,0.25)',
+        background: 'rgba(14,165,164,0.08)',
         cursor: 'pointer',
         transition: 'all 0.3s ease',
         fontSize: '0.8rem',
         fontWeight: 600,
-        color: '#0ea5e9',
+        color: '#0EA5A4',
         backdropFilter: 'blur(10px)',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.background = 'rgba(14,165,233,0.1)';
-        e.currentTarget.style.borderColor = 'rgba(14,165,233,0.4)';
+        e.currentTarget.style.background = 'rgba(14,165,164,0.15)';
+        e.currentTarget.style.borderColor = 'rgba(14,165,164,0.4)';
         e.currentTarget.style.transform = 'scale(1.05)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.background = 'rgba(14,165,233,0.05)';
-        e.currentTarget.style.borderColor = 'rgba(14,165,233,0.2)';
+        e.currentTarget.style.background = 'rgba(14,165,164,0.08)';
+        e.currentTarget.style.borderColor = 'rgba(14,165,164,0.25)';
         e.currentTarget.style.transform = 'scale(1)';
       }}
     >

@@ -24,7 +24,7 @@ export default function Footer() {
 
   return (
     <footer style={{
-      background: 'linear-gradient(135deg, #0a1628 0%, #0f2139 100%)',
+      background: 'linear-gradient(135deg, #071426 0%, #0C1E3A 100%)',
       color: 'white',
       position: 'relative',
       overflow: 'hidden',
@@ -36,7 +36,7 @@ export default function Footer() {
         left: 0,
         right: 0,
         height: '2px',
-        background: 'linear-gradient(90deg, transparent, #0ea5e9, #d4a853, #0ea5e9, transparent)',
+        background: 'linear-gradient(90deg, transparent, #0EA5A4, #D4A63F, #0EA5A4, transparent)',
       }} />
 
       <div style={{
@@ -62,7 +62,7 @@ export default function Footer() {
                 width: '44px',
                 height: '44px',
                 borderRadius: '14px',
-                background: 'linear-gradient(135deg, #0ea5e9, #06b6d4)',
+                background: 'linear-gradient(135deg, #0EA5A4, #00D4A6)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -128,7 +128,7 @@ export default function Footer() {
                     padding: '0.25rem 0',
                     fontFamily: language === 'ar' ? "'Noto Sans Arabic', sans-serif" : "'Inter', sans-serif",
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = '#0ea5e9'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = '#0EA5A4'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = '#94a3b8'; }}
                 >
                   {link.label}
@@ -166,7 +166,7 @@ export default function Footer() {
                     alignItems: 'center',
                     gap: '0.5rem',
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = '#0ea5e9'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = '#0EA5A4'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = '#94a3b8'; }}
                 >
                   <span style={{ fontSize: '0.9rem' }}>{link.icon}</span>
@@ -190,8 +190,8 @@ export default function Footer() {
             </h3>
             <div style={{
               padding: '1.25rem',
-              background: 'rgba(14,165,233,0.05)',
-              border: '1px solid rgba(14,165,233,0.1)',
+              background: 'rgba(14,165,164,0.05)',
+              border: '1px solid rgba(14,165,164,0.1)',
               borderRadius: '14px',
             }}>
               <p style={{
@@ -211,7 +211,7 @@ export default function Footer() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.5rem',
-                  color: '#0ea5e9',
+                  color: '#0EA5A4',
                   textDecoration: 'none',
                   fontSize: '0.85rem',
                   fontWeight: 500,
@@ -254,7 +254,7 @@ export default function Footer() {
               width: '6px',
               height: '6px',
               borderRadius: '50%',
-              background: '#10b981',
+              background: '#00D4A6',
               display: 'inline-block',
             }} />
             {language === 'ar' ? 'يشكّل مستقبل الطب' : 'Shaping the future of medicine'}

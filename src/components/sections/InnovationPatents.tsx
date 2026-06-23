@@ -17,7 +17,7 @@ export default function InnovationPatents() {
           <path d="M12 6v6l4 2" />
         </svg>
       ),
-      color: '#0ea5e9',
+      color: '#0EA5A4',
     },
     {
       key: 'patent2',
@@ -26,7 +26,7 @@ export default function InnovationPatents() {
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
         </svg>
       ),
-      color: '#d4a853',
+      color: '#00D4A6',
     },
     {
       key: 'patent3',
@@ -35,7 +35,7 @@ export default function InnovationPatents() {
           <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .962 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.582a.5.5 0 0 1 0 .962L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.962 0z" />
         </svg>
       ),
-      color: '#10b981',
+      color: '#2EC4C3',
     },
   ];
 
@@ -65,7 +65,7 @@ export default function InnovationPatents() {
                 <p style={{
                   fontSize: '1.25rem',
                   fontWeight: 600,
-                  color: '#0a1628',
+                  color: '#071426',
                   marginBottom: '0.75rem',
                   lineHeight: 1.6,
                 }}>
@@ -74,7 +74,7 @@ export default function InnovationPatents() {
                 <p style={{
                   fontSize: '1.25rem',
                   fontWeight: 600,
-                  background: 'linear-gradient(135deg, #0ea5e9, #06b6d4)',
+                  background: 'linear-gradient(135deg, #0EA5A4, #00D4A6)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   backgroundClip: 'text',
@@ -112,7 +112,7 @@ export default function InnovationPatents() {
                     width: '52px',
                     height: '52px',
                     borderRadius: '14px',
-                    background: `${patent.color}10`,
+                    background: `${patent.color}12`,
                     color: patent.color,
                     display: 'flex',
                     alignItems: 'center',
@@ -125,7 +125,7 @@ export default function InnovationPatents() {
                     <h3 style={{
                       fontSize: '1rem',
                       fontWeight: 700,
-                      color: '#0a1628',
+                      color: '#071426',
                       marginBottom: '0.35rem',
                     }}>
                       {t(`innovation.${patent.key}`)}

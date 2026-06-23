@@ -3,9 +3,9 @@
 import React from 'react';
 
 export default function MolecularBackground({ variant = 'light' }: { variant?: 'light' | 'dark' }) {
-  const color = variant === 'light' ? 'rgba(14,165,233,0.07)' : 'rgba(14,165,233,0.15)';
-  const colorGold = variant === 'light' ? 'rgba(212,168,83,0.05)' : 'rgba(212,168,83,0.1)';
-  const strokeColor = variant === 'light' ? 'rgba(14,165,233,0.1)' : 'rgba(14,165,233,0.2)';
+  const color = variant === 'light' ? 'rgba(14,165,164,0.07)' : 'rgba(14,165,164,0.15)';
+  const colorAccent = variant === 'light' ? 'rgba(0,212,166,0.05)' : 'rgba(0,212,166,0.1)';
+  const strokeColor = variant === 'light' ? 'rgba(14,165,164,0.1)' : 'rgba(14,165,164,0.2)';
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
@@ -52,23 +52,23 @@ export default function MolecularBackground({ variant = 'light' }: { variant?: '
         {/* Circles / Atoms */}
         <circle cx="12%" cy="25%" r="4" fill={color} className="animate-pulse-glow" />
         <circle cx="88%" cy="18%" r="3" fill={color} className="animate-pulse-glow" style={{ animationDelay: '1s' }} />
-        <circle cx="78%" cy="72%" r="5" fill={colorGold} className="animate-pulse-glow" style={{ animationDelay: '2s' }} />
+        <circle cx="78%" cy="72%" r="5" fill={colorAccent} className="animate-pulse-glow" style={{ animationDelay: '2s' }} />
         <circle cx="25%" cy="80%" r="3" fill={color} className="animate-pulse-glow" style={{ animationDelay: '0.5s' }} />
-        <circle cx="50%" cy="12%" r="2.5" fill={colorGold} className="animate-pulse-glow" style={{ animationDelay: '3s' }} />
+        <circle cx="50%" cy="12%" r="2.5" fill={colorAccent} className="animate-pulse-glow" style={{ animationDelay: '3s' }} />
         <circle cx="92%" cy="45%" r="3.5" fill={color} className="animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
         <circle cx="5%" cy="55%" r="2" fill={color} className="animate-pulse-glow" style={{ animationDelay: '2.5s' }} />
-        <circle cx="40%" cy="90%" r="3" fill={colorGold} className="animate-pulse-glow" style={{ animationDelay: '4s' }} />
+        <circle cx="40%" cy="90%" r="3" fill={colorAccent} className="animate-pulse-glow" style={{ animationDelay: '4s' }} />
         
         {/* Molecule clusters */}
         <g className="animate-float-fast" style={{ animationDelay: '1s' }}>
           <circle cx="20%" cy="60%" r="6" fill={color} />
-          <circle cx="23%" cy="57%" r="4" fill={colorGold} />
+          <circle cx="23%" cy="57%" r="4" fill={colorAccent} />
           <line x1="20%" y1="60%" x2="23%" y2="57%" stroke={strokeColor} strokeWidth="1.5" />
         </g>
         
         <g className="animate-float-medium" style={{ animationDelay: '3s' }}>
           <circle cx="70%" cy="40%" r="5" fill={color} />
-          <circle cx="73%" cy="43%" r="3.5" fill={colorGold} />
+          <circle cx="73%" cy="43%" r="3.5" fill={colorAccent} />
           <circle cx="67%" cy="43%" r="3" fill={color} />
           <line x1="70%" y1="40%" x2="73%" y2="43%" stroke={strokeColor} strokeWidth="1" />
           <line x1="70%" y1="40%" x2="67%" y2="43%" stroke={strokeColor} strokeWidth="1" />

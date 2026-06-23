@@ -27,8 +27,8 @@ export default function GlobalRecognition() {
           <ScrollReveal>
             <div>
               <div className="section-badge" style={{
-                borderColor: 'rgba(14,165,233,0.3)',
-                background: 'rgba(14,165,233,0.1)',
+                borderColor: 'rgba(14,165,164,0.3)',
+                background: 'rgba(14,165,164,0.1)',
               }}>
                 {t('recognition.badge')}
               </div>
@@ -46,7 +46,7 @@ export default function GlobalRecognition() {
               <div style={{
                 width: '60px',
                 height: '3px',
-                background: 'linear-gradient(135deg, #0ea5e9, #d4a853)',
+                background: 'linear-gradient(135deg, #0EA5A4, #D4A63F)',
                 borderRadius: '2px',
                 marginBottom: '2rem',
               }} />
@@ -66,22 +66,22 @@ export default function GlobalRecognition() {
                 {t('recognition.p2')}
               </p>
 
-              {/* Award badge */}
+              {/* Award badge — Gold only */}
               <div style={{
                 marginTop: '2.5rem',
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '1rem',
                 padding: '1.25rem 2rem',
-                background: 'rgba(212,168,83,0.1)',
-                border: '1px solid rgba(212,168,83,0.25)',
+                background: 'rgba(212,166,63,0.08)',
+                border: '1px solid rgba(212,166,63,0.2)',
                 borderRadius: '16px',
               }}>
                 <div style={{
                   width: '50px',
                   height: '50px',
                   borderRadius: '50%',
-                  background: 'linear-gradient(135deg, #d4a853, #e8c97a)',
+                  background: 'linear-gradient(135deg, #D4A63F, #E2BD6A)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -93,9 +93,10 @@ export default function GlobalRecognition() {
                   <div style={{
                     fontSize: '1.75rem',
                     fontWeight: 800,
-                    color: '#d4a853',
-                    fontFamily: "'Playfair Display', serif",
+                    color: '#D4A63F',
+                    fontFamily: "'Inter', sans-serif",
                     lineHeight: 1,
+                    textShadow: '0 0 20px rgba(212,166,63,0.3)',
                   }}>
                     Top 2%
                   </div>
@@ -132,7 +133,7 @@ export default function GlobalRecognition() {
               <div style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(to top, rgba(10,22,40,0.6) 0%, transparent 60%)',
+                background: 'linear-gradient(to top, rgba(7,20,38,0.6) 0%, transparent 60%)',
                 borderRadius: '24px',
               }} />
               {/* Border glow */}
@@ -140,7 +141,7 @@ export default function GlobalRecognition() {
                 position: 'absolute',
                 inset: '-2px',
                 borderRadius: '26px',
-                background: 'linear-gradient(135deg, rgba(14,165,233,0.3), rgba(212,168,83,0.3), rgba(14,165,233,0.3))',
+                background: 'linear-gradient(135deg, rgba(14,165,164,0.3), rgba(212,166,63,0.3), rgba(14,165,164,0.3))',
                 zIndex: -1,
               }} />
             </div>

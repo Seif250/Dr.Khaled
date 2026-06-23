@@ -57,7 +57,7 @@ export default function WhyNanomedicine() {
         right: '0',
         width: '40%',
         height: '100%',
-        background: 'linear-gradient(to left, rgba(14,165,233,0.02) 0%, transparent 100%)',
+        background: 'linear-gradient(to left, rgba(14,165,164,0.02) 0%, transparent 100%)',
         pointerEvents: 'none',
       }} />
 
@@ -75,7 +75,7 @@ export default function WhyNanomedicine() {
               borderRadius: '24px',
               overflow: 'hidden',
               aspectRatio: '4/3',
-              boxShadow: '0 20px 60px rgba(10,22,40,0.15)',
+              boxShadow: '0 20px 60px rgba(7,20,38,0.15)',
             }}>
               <Image
                 src="/images/dr-khaled-lab.png"
@@ -88,7 +88,7 @@ export default function WhyNanomedicine() {
               <div style={{
                 position: 'absolute',
                 inset: 0,
-                background: 'linear-gradient(to top, rgba(10,22,40,0.4) 0%, transparent 50%)',
+                background: 'linear-gradient(to top, rgba(7,20,38,0.5) 0%, transparent 50%)',
               }} />
               {/* Floating badge on image */}
               <div style={{
@@ -108,7 +108,7 @@ export default function WhyNanomedicine() {
                   width: '40px',
                   height: '40px',
                   borderRadius: '10px',
-                  background: 'linear-gradient(135deg, #0ea5e9, #06b6d4)',
+                  background: 'linear-gradient(135deg, #0EA5A4, #00D4A6)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -122,7 +122,7 @@ export default function WhyNanomedicine() {
                   <div style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 500 }}>
                     {language === 'ar' ? 'أبحاث السرطان' : 'Cancer Research'}
                   </div>
-                  <div style={{ fontSize: '0.85rem', color: '#0a1628', fontWeight: 600 }}>
+                  <div style={{ fontSize: '0.85rem', color: '#071426', fontWeight: 600 }}>
                     {language === 'ar' ? 'مختبر طب النانو' : 'Nanomedicine Laboratory'}
                   </div>
                 </div>
@@ -148,7 +148,7 @@ export default function WhyNanomedicine() {
                 <p style={{ color: '#475569', fontSize: '1.05rem', lineHeight: 1.8 }}>{t('why.p1')}</p>
                 <p style={{ color: '#64748b', lineHeight: 1.8 }}>{t('why.p2')}</p>
                 <p style={{ color: '#64748b', lineHeight: 1.8 }}>{t('why.p3')}</p>
-                <p style={{ color: '#0a1628', fontWeight: 600, fontSize: '1.05rem', lineHeight: 1.8 }}>{t('why.p4')}</p>
+                <p style={{ color: '#071426', fontWeight: 600, fontSize: '1.05rem', lineHeight: 1.8 }}>{t('why.p4')}</p>
               </div>
             </ScrollReveal>
 
@@ -173,7 +173,7 @@ export default function WhyNanomedicine() {
                       <h3 style={{
                         fontSize: '1rem',
                         fontWeight: 700,
-                        color: '#0a1628',
+                        color: '#071426',
                         marginBottom: '0.25rem',
                       }}>{h.title}</h3>
                       <p style={{
