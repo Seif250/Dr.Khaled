@@ -19,8 +19,6 @@ export default function Navbar() {
 
   const navLinks = [
     { href: '/', label: t('nav.home') },
-    { href: '/#about', label: t('nav.aboutRg') },
-    { href: '/#leadership', label: t('nav.leadership') },
     { href: '/technologies', label: t('nav.technologies') },
     { href: '/about-dr-khaled', label: t('nav.aboutDr') },
   ];
