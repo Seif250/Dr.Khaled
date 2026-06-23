@@ -76,7 +76,7 @@ export default function ScientificLeadershipBrief() {
                 fontSize: '16px',
                 fontWeight: 500,
               }}>
-                {t('rgnano.learnMore')}
+                {t('rgnano.exploreBio')} →
               </Link>
             </ScrollReveal>
           </div>

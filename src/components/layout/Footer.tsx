@@ -45,7 +45,7 @@ export default function Footer() {
               marginBottom: '24px',
               letterSpacing: '-0.04em',
             }}>
-              RG Nano
+              GR Nano
             </div>
             <p style={{
               color: 'var(--text-secondary)',
@@ -133,30 +133,17 @@ export default function Footer() {
               color: 'var(--text)',
               marginBottom: '24px',
             }}>
-              Contact Us
+              Contact
             </h3>
-            <div>
-              <p style={{
-                color: 'var(--text-secondary)',
-                fontSize: '15px',
-                lineHeight: 1.7,
-                marginBottom: '16px',
-              }}>
-                Have questions about our technologies or partnership opportunities? Reach out to our team.
-              </p>
-              <a
-                href="mailto:contact@rgnano.com"
-                style={{
-                  color: 'var(--text)',
-                  textDecoration: 'none',
-                  fontSize: '15px',
-                  fontWeight: 500,
-                  borderBottom: '1px solid var(--text)',
-                  paddingBottom: '2px',
-                }}
-              >
-                contact@rgnano.com
-              </a>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <Link href="mailto:contact@grnano.com" className="btn-link" style={{ fontSize: '15px', display: 'inline-block', width: 'fit-content' }}>
+                {t('tech.contactBtn')}
+              </Link>
+              <div style={{ color: 'var(--text-secondary)', fontSize: '15px', lineHeight: 1.6 }}>
+                <strong>Email:</strong> contact@grnano.com<br />
+                <strong>Phone:</strong> +973 1234 5678<br />
+                <strong>Location:</strong> Arabian Gulf University, Bahrain
+              </div>
             </div>
           </div>
         </div>
@@ -175,7 +162,7 @@ export default function Footer() {
             color: 'var(--text-muted)',
             fontSize: '14px',
           }}>
-            © {new Date().getFullYear()} RG Nano. All rights reserved.
+            © {new Date().getFullYear()} GR Nano. All rights reserved.
           </p>
           <div style={{
             color: 'var(--text-muted)',

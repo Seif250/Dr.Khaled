@@ -68,7 +68,7 @@ export default function Navbar() {
               fontFamily: 'var(--font-outfit)',
               letterSpacing: '-0.04em',
             }}>
-              RG Nano
+              GR Nano
             </span>
           </div>
         </Link>

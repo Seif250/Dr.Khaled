@@ -1,15 +1,21 @@
 'use client';
 
-import RGNanoHero from '@/components/sections/RGNanoHero';
-import AboutRGNano from '@/components/sections/AboutRGNano';
+import GRNanoHero from '@/components/sections/GRNanoHero';
+import AboutGRNano from '@/components/sections/AboutGRNano';
+import ScienceBehindGRNano from '@/components/sections/ScienceBehindGRNano';
+import HomeTechnologies from '@/components/sections/HomeTechnologies';
 import ScientificLeadershipBrief from '@/components/sections/ScientificLeadershipBrief';
+import FounderStatement from '@/components/sections/FounderStatement';
 
 export default function HomePage() {
   return (
     <main>
-      <RGNanoHero />
-      <AboutRGNano />
+      <GRNanoHero />
+      <AboutGRNano />
+      <ScienceBehindGRNano />
+      <HomeTechnologies />
       <ScientificLeadershipBrief />
+      <FounderStatement />
     </main>
   );
 }
