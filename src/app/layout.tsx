@@ -1,29 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Noto_Sans_Arabic, Noto_Kufi_Arabic } from "next/font/google";
+import { Outfit, Cairo } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ 
+const outfit = Outfit({ 
   subsets: ["latin"],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const playfair = Playfair_Display({ 
-  subsets: ["latin"],
-  variable: '--font-playfair',
-  display: 'swap',
-});
-
-const notoSansArabic = Noto_Sans_Arabic({ 
-  subsets: ["arabic"],
-  variable: '--font-noto-sans-ar',
+  variable: '--font-outfit',
   display: 'swap',
   weight: ['300', '400', '500', '600', '700'],
 });
 
-const notoKufiArabic = Noto_Kufi_Arabic({ 
+const cairo = Cairo({ 
   subsets: ["arabic"],
-  variable: '--font-noto-kufi-ar',
+  variable: '--font-cairo',
   display: 'swap',
   weight: ['300', '400', '500', '600', '700', '800'],
 });
@@ -33,7 +21,7 @@ export const metadata: Metadata = {
   description: "Professor Khaled Fathi Greish is a globally recognized nanomedicine researcher ranked among the Top 2% of Scientists Worldwide. His work focuses on intelligent drug delivery systems and innovative cancer treatment solutions.",
   keywords: "Khaled Greish, nanomedicine, cancer treatment, drug delivery, nanoparticles, EPR effect, Arabian Gulf University",
   openGraph: {
-    title: "Prof. Khaled Fathi Greish — Transforming Cancer Treatment Through Nanomedicine",
+    title: "Prof. Khaled Fathi Greish — Shaping The Future Of Cancer Treatment",
     description: "Globally recognized nanomedicine researcher ranked among the Top 2% of Scientists Worldwide.",
     type: "website",
   },
@@ -46,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" dir="ltr" suppressHydrationWarning>
-      <body className={`${inter.variable} ${playfair.variable} ${notoSansArabic.variable} ${notoKufiArabic.variable}`}>
+      <body className={`${outfit.variable} ${cairo.variable}`}>
         {children}
       </body>
     </html>

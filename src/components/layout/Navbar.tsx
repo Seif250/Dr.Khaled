@@ -21,7 +21,6 @@ export default function Navbar() {
     { href: '#publications', label: t('nav.publications') },
     { href: '#journey', label: t('nav.journey') },
     { href: '#collaborations', label: t('nav.collaborations') },
-    { href: '#media', label: t('nav.media') },
   ];
 
   return (
@@ -34,15 +33,16 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 1000,
-        padding: scrolled ? '0.75rem 0' : '1.25rem 0',
-        background: scrolled ? undefined : 'transparent',
-        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+        padding: scrolled ? '16px 0' : '24px 0',
+        background: scrolled ? undefined : 'var(--white)',
+        borderBottom: scrolled ? 'none' : '1px solid rgba(0,0,0,0.04)',
+        transition: 'all 0.4s var(--ease)',
       }}
     >
       <div style={{
-        maxWidth: '1280px',
+        maxWidth: 'var(--container-max)',
         margin: '0 auto',
-        padding: '0 clamp(1.5rem, 4vw, 3rem)',
+        padding: '0 var(--container-padding)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
@@ -52,43 +52,21 @@ export default function Navbar() {
           textDecoration: 'none',
           display: 'flex',
           alignItems: 'center',
-          gap: '10px',
+          gap: '12px',
         }}>
-          <div style={{
-            width: '40px',
-            height: '40px',
-            borderRadius: '12px',
-            background: 'linear-gradient(135deg, #0EA5A4, #00D4A6)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: 'white',
-            fontWeight: 800,
-            fontSize: '1.1rem',
-            fontFamily: "'Playfair Display', serif",
-          }}>
-            KG
-          </div>
           <div style={{
             display: 'flex',
             flexDirection: 'column',
             lineHeight: 1.2,
           }}>
             <span style={{
-              fontWeight: 700,
-              fontSize: '0.95rem',
-              color: scrolled ? '#ffffff' : '#ffffff',
-              fontFamily: language === 'ar' ? "'Noto Kufi Arabic', sans-serif" : "'Inter', sans-serif",
+              fontWeight: 600,
+              fontSize: '18px',
+              color: 'var(--text)',
+              fontFamily: language === 'ar' ? 'var(--font-cairo)' : 'var(--font-outfit)',
+              letterSpacing: '-0.02em',
             }}>
-              {language === 'ar' ? 'د. خالد جريش' : 'Dr. K. Greish'}
-            </span>
-            <span style={{
-              fontSize: '0.65rem',
-              color: scrolled ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.5)',
-              fontWeight: 500,
-              letterSpacing: language === 'ar' ? '0' : '0.03em',
-            }}>
-              {language === 'ar' ? 'طب النانو' : 'Nanomedicine'}
+              {language === 'ar' ? 'د. خالد جريش' : 'Dr. Khaled Greish'}
             </span>
           </div>
         </a>
@@ -97,35 +75,28 @@ export default function Navbar() {
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '2rem',
+          gap: '40px',
         }} className="desktop-nav">
           <div style={{
             display: 'flex',
-            gap: '0.25rem',
+            gap: '32px',
             alignItems: 'center',
           }}>
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
+                className="nav-link"
                 style={{
                   textDecoration: 'none',
-                  color: 'rgba(255,255,255,0.6)',
-                  fontSize: '0.85rem',
+                  color: 'var(--text-secondary)',
+                  fontSize: '15px',
                   fontWeight: 500,
-                  padding: '0.5rem 0.75rem',
-                  borderRadius: '8px',
-                  transition: 'all 0.3s ease',
-                  fontFamily: language === 'ar' ? "'Noto Sans Arabic', sans-serif" : "'Inter', sans-serif",
+                  transition: 'color 0.3s var(--ease)',
+                  fontFamily: language === 'ar' ? 'var(--font-cairo)' : 'var(--font-outfit)',
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = '#0EA5A4';
-                  e.currentTarget.style.background = 'rgba(14,165,164,0.08)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'rgba(255,255,255,0.6)';
-                  e.currentTarget.style.background = 'transparent';
-                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
               >
                 {link.label}
               </a>
@@ -135,7 +106,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu Button */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }} className="mobile-nav">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }} className="mobile-nav">
           <LanguageToggle />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -144,40 +115,36 @@ export default function Navbar() {
               background: 'none',
               border: 'none',
               cursor: 'pointer',
-              padding: '8px',
               display: 'flex',
               flexDirection: 'column',
-              gap: mobileOpen ? '0' : '5px',
+              gap: mobileOpen ? '0' : '6px',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '36px',
-              height: '36px',
+              width: '24px',
+              height: '24px',
             }}
           >
             <span style={{
               display: 'block',
-              width: '22px',
-              height: '2px',
-              background: '#ffffff',
-              borderRadius: '1px',
+              width: '100%',
+              height: '1.5px',
+              background: 'var(--text)',
               transition: 'all 0.3s ease',
               transform: mobileOpen ? 'rotate(45deg) translateY(1px)' : 'none',
             }} />
             <span style={{
               display: 'block',
-              width: '22px',
-              height: '2px',
-              background: '#ffffff',
-              borderRadius: '1px',
+              width: '100%',
+              height: '1.5px',
+              background: 'var(--text)',
               transition: 'all 0.3s ease',
               opacity: mobileOpen ? 0 : 1,
             }} />
             <span style={{
               display: 'block',
-              width: '22px',
-              height: '2px',
-              background: '#ffffff',
-              borderRadius: '1px',
+              width: '100%',
+              height: '1.5px',
+              background: 'var(--text)',
               transition: 'all 0.3s ease',
               transform: mobileOpen ? 'rotate(-45deg) translateY(-1px)' : 'none',
             }} />
@@ -189,15 +156,15 @@ export default function Navbar() {
       <div style={{
         maxHeight: mobileOpen ? '400px' : '0',
         overflow: 'hidden',
-        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-        background: 'rgba(7,20,38,0.95)',
-        backdropFilter: 'blur(20px)',
+        transition: 'all 0.4s var(--ease)',
+        background: 'var(--white)',
+        borderBottom: mobileOpen ? '1px solid rgba(0,0,0,0.06)' : 'none',
       }}>
         <div style={{
-          padding: '1rem clamp(1.5rem, 4vw, 3rem)',
+          padding: '24px var(--container-padding)',
           display: 'flex',
           flexDirection: 'column',
-          gap: '0.25rem',
+          gap: '16px',
         }}>
           {navLinks.map((link) => (
             <a
@@ -206,21 +173,10 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               style={{
                 textDecoration: 'none',
-                color: 'rgba(255,255,255,0.7)',
-                fontSize: '0.95rem',
+                color: 'var(--text)',
+                fontSize: '16px',
                 fontWeight: 500,
-                padding: '0.75rem 1rem',
-                borderRadius: '10px',
-                transition: 'all 0.2s ease',
-                fontFamily: language === 'ar' ? "'Noto Sans Arabic', sans-serif" : "'Inter', sans-serif",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(14,165,164,0.1)';
-                e.currentTarget.style.color = '#0EA5A4';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.color = 'rgba(255,255,255,0.7)';
+                fontFamily: language === 'ar' ? 'var(--font-cairo)' : 'var(--font-outfit)',
               }}
             >
               {link.label}

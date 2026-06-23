@@ -3,7 +3,6 @@
 import { LanguageProvider } from '@/context/LanguageContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import CursorGlow from '@/components/ui/CursorGlow';
 import HeroSection from '@/components/sections/HeroSection';
 import MissionSection from '@/components/sections/MissionSection';
 import WhyNanomedicine from '@/components/sections/WhyNanomedicine';
@@ -20,7 +19,6 @@ import MediaTalks from '@/components/sections/MediaTalks';
 export default function Home() {
   return (
     <LanguageProvider>
-      <CursorGlow />
       <Navbar />
       <main>
         <HeroSection />
