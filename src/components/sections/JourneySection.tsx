@@ -9,11 +9,11 @@ const journeyData = ['egypt', 'japan', 'usa', 'nz', 'bahrain'] as const;
 type JourneyKey = typeof journeyData[number];
 
 const imageMap: Record<JourneyKey, string> = {
-  egypt: '/images/جامعة قناة السويس مصر.png',
-  japan: '/images/kumamoto university japan.png',
-  usa: '/images/University of Utah.png',
-  nz: '/images/University of Otago.png',
-  bahrain: '/images/Arabian Gulf University.png',
+  egypt: '/images/egypt-university.png',
+  japan: '/images/japan-university.png',
+  usa: '/images/usa-university.png',
+  nz: '/images/nz-university.png',
+  bahrain: '/images/bahrain-university.png',
 };
 
 export default function JourneySection() {
