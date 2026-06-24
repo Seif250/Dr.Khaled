@@ -50,7 +50,7 @@ export default function Publications() {
                       </span>
                       <span style={{
                         fontSize: '12px',
-                        color: 'var(--green)',
+                        color: 'var(--deep-teal)',
                         fontWeight: 600,
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',

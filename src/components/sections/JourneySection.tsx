@@ -74,7 +74,7 @@ export default function JourneySection() {
             {/* Text Side */}
             <div style={{ order: language === 'ar' ? 2 : 1 }}>
               <div style={{
-                color: 'var(--green)',
+                color: 'var(--deep-teal)',
                 fontWeight: 600,
                 letterSpacing: '0.1em',
                 marginBottom: '16px',

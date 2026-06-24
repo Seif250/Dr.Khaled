@@ -10,7 +10,7 @@ export default function AboutGRNano() {
 
   return (
     <section id="about" style={{ background: 'var(--white)' }}>
-      <div className="section-container" style={{ paddingTop: '0px' }}>
+      <div className="section-container" style={{ paddingTop: 'clamp(40px, 6vw, 80px)' }}>
         <ScrollReveal>
           <div className="section-label">{t('rgnano.aboutLabel')}</div>
           <h2 style={{

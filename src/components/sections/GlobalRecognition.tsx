@@ -4,13 +4,22 @@ import React from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import NanoParticles from '@/components/ui/NanoParticles';
 
 export default function GlobalRecognition() {
   const { t, language } = useLanguage();
 
   return (
-    <section style={{ background: 'var(--dark)' }}>
-      <div className="section-container">
+    <section style={{
+      background: 'linear-gradient(160deg, #0A1628 0%, #0A2E2A 50%, #0F1D32 100%)',
+      color: 'var(--white)',
+      position: 'relative',
+      overflow: 'hidden',
+    }}>
+      {/* Nanoparticle Animation Background */}
+      <NanoParticles variant="dark" particleCount={15} />
+
+      <div className="section-container" style={{ position: 'relative', zIndex: 2 }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))',
@@ -50,7 +59,7 @@ export default function GlobalRecognition() {
                 <div style={{
                   fontSize: '32px',
                   fontWeight: 300,
-                  color: 'var(--gold)',
+                  color: 'var(--emerald)',
                   fontFamily: 'var(--font-outfit)',
                   lineHeight: 1,
                 }}>
@@ -77,7 +86,7 @@ export default function GlobalRecognition() {
           {/* Image */}
           <div style={{ order: language === 'ar' ? 1 : 2 }}>
             <ScrollReveal delay={2}>
-              <div className="editorial-image" style={{ aspectRatio: '3/4' }}>
+              <div className="editorial-image" style={{ aspectRatio: '3/4', borderRadius: '20px' }}>
                 <Image
                   src="/images/dr-khaled-formal.png"
                   alt="Global Recognition"
