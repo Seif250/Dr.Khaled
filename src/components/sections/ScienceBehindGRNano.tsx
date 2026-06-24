@@ -5,13 +5,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import NanoParticles from '@/components/ui/NanoParticles';
 
 export default function ScienceBehindGRNano() {
   const { t, language } = useLanguage();
 
   return (
-    <section style={{ background: 'var(--off-white)' }}>
-      <div className="section-container">
+    <section style={{
+      background: 'linear-gradient(160deg, #0A1628 0%, #0A2E2A 50%, #0F1D32 100%)',
+      color: 'var(--white)',
+      position: 'relative',
+      overflow: 'hidden',
+    }}>
+      {/* Nanoparticle animation for the background */}
+      <NanoParticles variant="dark" particleCount={20} />
+
+      <div className="section-container" style={{ position: 'relative', zIndex: 2 }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))',
@@ -36,12 +45,13 @@ export default function ScienceBehindGRNano() {
           {/* Content */}
           <div style={{ order: language === 'ar' ? 1 : 2 }}>
             <ScrollReveal delay={1}>
-              <div className="section-label">{t('rgnano.scienceBehindLabel')}</div>
+              <div className="section-label-light">{t('rgnano.scienceBehindLabel')}</div>
               <h2 style={{
                 fontSize: 'clamp(36px, 4.5vw, 60px)',
                 lineHeight: 1.15,
                 marginBottom: '32px',
                 fontFamily: language === 'ar' ? 'var(--font-cairo)' : 'var(--font-outfit)',
+                color: 'var(--white)',
               }}>
                 {t('rgnano.scienceBehindHeadline')}
               </h2>
@@ -50,7 +60,7 @@ export default function ScienceBehindGRNano() {
             <ScrollReveal delay={2}>
               <p style={{
                 fontSize: 'clamp(18px, 1.2vw, 22px)',
-                color: 'var(--text-secondary)',
+                color: 'rgba(255, 255, 255, 0.7)',
                 lineHeight: 1.8,
                 marginBottom: '48px',
               }}>
@@ -70,8 +80,8 @@ export default function ScienceBehindGRNano() {
                     <span style={{
                       padding: '6px 16px',
                       borderRadius: '60px',
-                      background: i === 0 ? 'rgba(15, 118, 110, 0.1)' : 'rgba(79, 168, 216, 0.08)',
-                      color: i === 0 ? 'var(--deep-teal)' : 'var(--serene-blue)',
+                      background: i === 0 ? 'rgba(16, 185, 129, 0.15)' : 'rgba(79, 168, 216, 0.12)',
+                      color: i === 0 ? 'var(--emerald)' : 'var(--serene-blue)',
                       fontSize: '13px',
                       fontWeight: 600,
                       letterSpacing: '0.02em',
@@ -79,13 +89,27 @@ export default function ScienceBehindGRNano() {
                       {step}
                     </span>
                     {i < 3 && (
-                      <span style={{ color: 'var(--text-muted)', fontSize: '16px' }}>→</span>
+                      <span style={{ color: 'rgba(255, 255, 255, 0.3)', fontSize: '16px' }}>→</span>
                     )}
                   </React.Fragment>
                 ))}
               </div>
 
-              <Link href="/about-dr-khaled" className="btn-link" style={{ fontSize: '18px' }}>
+              <Link href="/about-dr-khaled" style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                color: 'var(--white)',
+                textDecoration: 'none',
+                borderBottom: '1px solid rgba(255,255,255,0.3)',
+                paddingBottom: '4px',
+                fontSize: '18px',
+                fontWeight: 500,
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderBottomColor = 'var(--serene-blue)'; e.currentTarget.style.color = 'var(--serene-blue)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.color = 'var(--white)'; }}
+              >
                 {t('rgnano.scienceBehindLink')} →
               </Link>
             </ScrollReveal>

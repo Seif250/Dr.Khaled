@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
+import NanoParticles from '@/components/ui/NanoParticles';
 
 export default function HeroSection() {
   const { t, language } = useLanguage();
@@ -15,8 +16,12 @@ export default function HeroSection() {
       position: 'relative',
       background: 'var(--white)',
       paddingTop: '80px', // account for navbar
+      overflow: 'hidden',
     }}>
-      <div className="section-container" style={{ width: '100%' }}>
+      {/* Dynamic Nanoparticle Background */}
+      <NanoParticles variant="hero" />
+
+      <div className="section-container" style={{ width: '100%', position: 'relative', zIndex: 2 }}>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 500px), 1fr))',
@@ -34,7 +39,7 @@ export default function HeroSection() {
               color: 'var(--text)',
             }}>
               {t('hero.headline1')}<br/>
-              <span style={{ color: 'var(--green)' }}>{t('hero.headline2')}</span><br/>
+              <span style={{ color: 'var(--deep-teal)' }}>{t('hero.headline2')}</span><br/>
               {t('hero.headline3')}
             </h1>
 
@@ -66,7 +71,7 @@ export default function HeroSection() {
               aspectRatio: '4/5',
               borderRadius: '24px',
               overflow: 'hidden',
-              boxShadow: '0 40px 100px -20px rgba(14, 159, 110, 0.15)',
+              boxShadow: '0 40px 100px -20px rgba(15, 118, 110, 0.15)',
             }}>
               {/* Soft gradient behind */}
               <div style={{

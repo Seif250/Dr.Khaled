@@ -53,30 +53,15 @@ export default function Navbar() {
           textDecoration: 'none',
           display: 'flex',
           alignItems: 'center',
-          gap: '12px',
         }}>
-          <div style={{ position: 'relative', width: '36px', height: '36px', flexShrink: 0 }}>
+          <div style={{ position: 'relative', width: '160px', height: '48px', flexShrink: 0 }}>
             <Image
               src="/images/logo.png"
               alt="GR Nano Logo"
               fill
-              style={{ objectFit: 'contain' }}
+              style={{ objectFit: 'contain', objectPosition: language === 'ar' ? 'right' : 'left' }}
+              priority
             />
-          </div>
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            lineHeight: 1.2,
-          }}>
-            <span style={{
-              fontWeight: 700,
-              fontSize: '22px',
-              color: 'var(--text)',
-              fontFamily: 'var(--font-outfit)',
-              letterSpacing: '-0.04em',
-            }}>
-              GR <span style={{ color: 'var(--deep-teal)' }}>Nano</span>
-            </span>
           </div>
         </Link>
 

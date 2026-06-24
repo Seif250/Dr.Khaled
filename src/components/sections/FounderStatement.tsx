@@ -9,6 +9,8 @@ import NanoParticles from '@/components/ui/NanoParticles';
 export default function FounderStatement() {
   const { t, language } = useLanguage();
 
+  const isAr = language === 'ar';
+
   return (
     <section style={{
       background: 'linear-gradient(160deg, #0A1628 0%, #0A2E2A 60%, #0F1D32 100%)',
@@ -26,8 +28,8 @@ export default function FounderStatement() {
           alignItems: 'center',
         }}>
           
-          {/* Quote */}
-          <div style={{ order: language === 'ar' ? 2 : 1 }}>
+          {/* Quote Column */}
+          <div style={{ textAlign: isAr ? 'right' : 'left' }}>
             <ScrollReveal>
               <div style={{
                 width: '48px',
@@ -35,13 +37,15 @@ export default function FounderStatement() {
                 background: 'linear-gradient(90deg, var(--serene-blue), var(--emerald))',
                 borderRadius: '2px',
                 marginBottom: '40px',
+                marginLeft: isAr ? 'auto' : '0',
+                marginRight: isAr ? '0' : 'auto',
               }} />
               <h2 style={{
-                fontSize: 'clamp(36px, 4.5vw, 60px)',
-                lineHeight: 1.2,
+                fontSize: 'clamp(24px, 2.5vw, 36px)',
+                lineHeight: 1.4,
                 fontWeight: 300,
                 marginBottom: '48px',
-                fontFamily: language === 'ar' ? 'var(--font-cairo)' : 'var(--font-outfit)',
+                fontFamily: isAr ? 'var(--font-cairo)' : 'var(--font-outfit)',
               }}>
                 &quot;{t('rgnano.founderStatementQuote')}&quot;
               </h2>
@@ -50,7 +54,7 @@ export default function FounderStatement() {
             <ScrollReveal delay={1}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 <div style={{ fontSize: '24px', fontWeight: 600 }}>
-                  {language === 'ar' ? 'البروفيسور خالد جريش' : 'Prof. Khaled Greish'}
+                  {isAr ? 'البروفيسور خالد جريش' : 'Prof. Khaled Greish'}
                 </div>
                 <div style={{
                   fontSize: '14px',
@@ -59,14 +63,14 @@ export default function FounderStatement() {
                   letterSpacing: '0.12em',
                   fontWeight: 500,
                 }}>
-                  Scientific Founder, GR Nano
+                  {isAr ? 'المؤسس العلمي، جي آر نانو' : 'Scientific Founder, GR Nano'}
                 </div>
               </div>
             </ScrollReveal>
           </div>
 
-          {/* Image — Full color, NO grayscale */}
-          <div style={{ order: language === 'ar' ? 1 : 2 }}>
+          {/* Image Column */}
+          <div>
             <ScrollReveal delay={2}>
               <div className="editorial-image" style={{ aspectRatio: '3/4', position: 'relative', borderRadius: '20px' }}>
                 <Image

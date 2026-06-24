@@ -42,25 +42,15 @@ export default function Footer() {
             <div style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '12px',
               marginBottom: '24px',
             }}>
-              <div style={{ position: 'relative', width: '32px', height: '32px', flexShrink: 0 }}>
+              <div style={{ position: 'relative', width: '160px', height: '48px', flexShrink: 0 }}>
                 <Image
                   src="/images/logo.png"
                   alt="GR Nano Logo"
                   fill
-                  style={{ objectFit: 'contain' }}
+                  style={{ objectFit: 'contain', objectPosition: language === 'ar' ? 'right' : 'left' }}
                 />
-              </div>
-              <div style={{
-                fontWeight: 700,
-                fontSize: '24px',
-                fontFamily: 'var(--font-outfit)',
-                letterSpacing: '-0.04em',
-                lineHeight: 1,
-              }}>
-                GR <span style={{ color: 'var(--deep-teal)' }}>Nano</span>
               </div>
             </div>
             <p style={{
