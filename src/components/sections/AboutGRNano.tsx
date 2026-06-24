@@ -9,13 +9,13 @@ export default function AboutGRNano() {
   const { t, language } = useLanguage();
 
   return (
-    <section id="about" style={{ background: 'var(--off-white)' }}>
+    <section id="about" style={{ background: 'var(--white)' }}>
       <div className="section-container">
         <ScrollReveal>
           <div className="section-label">{t('rgnano.aboutLabel')}</div>
           <h2 style={{
-            fontSize: 'clamp(36px, 4vw, 56px)',
-            lineHeight: 1.2,
+            fontSize: 'clamp(36px, 4.5vw, 60px)',
+            lineHeight: 1.15,
             marginBottom: '80px',
             maxWidth: '800px',
             fontFamily: language === 'ar' ? 'var(--font-cairo)' : 'var(--font-outfit)',
@@ -34,10 +34,15 @@ export default function AboutGRNano() {
           <div style={{ display: 'grid', gap: '48px', order: language === 'ar' ? 2 : 1 }}>
             <ScrollReveal delay={1}>
               <div>
-                <h3 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '16px' }}>
+                <h3 style={{
+                  fontSize: '22px',
+                  fontWeight: 600,
+                  marginBottom: '16px',
+                  color: 'var(--deep-teal)',
+                }}>
                   {language === 'ar' ? 'الرؤية' : 'Vision'}
                 </h3>
-                <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   {t('rgnano.aboutVision')}
                 </p>
               </div>
@@ -45,10 +50,15 @@ export default function AboutGRNano() {
 
             <ScrollReveal delay={2}>
               <div>
-                <h3 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '16px' }}>
+                <h3 style={{
+                  fontSize: '22px',
+                  fontWeight: 600,
+                  marginBottom: '16px',
+                  color: 'var(--deep-teal)',
+                }}>
                   {language === 'ar' ? 'من نحن' : 'Who We Are'}
                 </h3>
-                <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   {t('rgnano.aboutMission')}
                 </p>
               </div>
@@ -56,20 +66,25 @@ export default function AboutGRNano() {
 
             <ScrollReveal delay={3}>
               <div>
-                <h3 style={{ fontSize: '24px', fontWeight: 600, marginBottom: '16px' }}>
+                <h3 style={{
+                  fontSize: '22px',
+                  fontWeight: 600,
+                  marginBottom: '16px',
+                  color: 'var(--deep-teal)',
+                }}>
                   {t('rgnano.howItWorks')}
                 </h3>
-                <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                <p style={{ fontSize: '18px', color: 'var(--text-secondary)', lineHeight: 1.7 }}>
                   {t('rgnano.howItWorksDesc')}
                 </p>
               </div>
             </ScrollReveal>
           </div>
 
-          {/* Lab Image */}
+          {/* Lab Image — Larger */}
           <div style={{ order: language === 'ar' ? 1 : 2 }}>
             <ScrollReveal delay={2}>
-              <div className="editorial-image" style={{ aspectRatio: '3/4' }}>
+              <div className="editorial-image" style={{ aspectRatio: '2/3', borderRadius: '20px' }}>
                 <Image
                   src="/images/dr-khaled-lab.png"
                   alt="GR Nano Laboratory"

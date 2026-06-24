@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
 /* ============================================
-   EDITORIAL DESIGN SYSTEM
-   Dr. Khaled Greish — Scientific Personal Brand
+   EDITORIAL DESIGN SYSTEM — v2
+   GR Nano — Innovation · Research · Future
    
+   Color Identity: Serene Blue + Deep Teal + Emerald
    Philosophy: Magazine, not dashboard.
-   No cards. No borders. Typography + whitespace.
+   Feel: Apple + Moderna + MIT Media Lab
    ============================================ */
 
 :root {
-  /* Color Palette — Minimal */
+  /* Color Palette — Innovation */
   --white: #FFFFFF;
-  --off-white: #FAFAFA;
-  --light-gray: #F5F5F5;
+  --off-white: #F8FAFB;
+  --light-gray: #F0F4F7;
   --text: #0F172A;
   --text-secondary: #475569;
   --text-muted: #94A3B8;
-  --green: #0E9F6E;
-  --green-dark: #065F46;
-  --gold: #D4A63F;
-  --dark: #0F172A;
-  --dark-medium: #1E293B;
+
+  /* Brand Colors */
+  --serene-blue: #4FA8D8;
+  --deep-teal: #0F766E;
+  --emerald: #10B981;
+  --accent: #4FA8D8;
+  --accent-dark: #3B8BBF;
+  --accent-hover: #0F766E;
+
+  /* Dark Surfaces */
+  --dark: #0A1628;
+  --dark-medium: #0F1D32;
+  --dark-teal: #0A2E2A;
 
   /* Spacing — Breathe */
   --section-padding: clamp(100px, 14vw, 180px);
@@ -99,7 +108,7 @@ p {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--green);
+  color: var(--deep-teal);
   margin-bottom: 24px;
 }
 
@@ -108,7 +117,7 @@ p {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: rgba(79, 168, 216, 0.6);
   margin-bottom: 24px;
 }
 
@@ -142,29 +151,53 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 32px;
-  background: var(--green);
+  padding: 16px 36px;
+  background: var(--deep-teal);
   color: white;
   font-weight: 500;
   font-size: 15px;
   border: none;
-  border-radius: 8px;
+  border-radius: 60px;
   cursor: pointer;
-  transition: all 0.3s var(--ease);
+  transition: all 0.4s var(--ease);
   text-decoration: none;
   letter-spacing: 0.01em;
 }
 
 .btn-primary:hover {
-  background: var(--green-dark);
-  transform: translateY(-1px);
+  background: var(--emerald);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.25);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  background: transparent;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 15px;
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all 0.4s var(--ease);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.btn-secondary:hover {
+  border-color: var(--serene-blue);
+  color: var(--serene-blue);
+  transform: translateY(-2px);
 }
 
 .btn-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--green);
+  color: var(--deep-teal);
   font-weight: 500;
   font-size: 15px;
   text-decoration: none;
@@ -173,7 +206,8 @@ p {
 }
 
 .btn-link:hover {
-  border-bottom-color: var(--green);
+  color: var(--emerald);
+  border-bottom-color: var(--emerald);
 }
 
 .btn-link-light {
@@ -211,7 +245,7 @@ p {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--green);
+  background: var(--serene-blue);
 }
 
 /* ============================================
@@ -219,12 +253,12 @@ p {
    ============================================ */
 
 ::selection {
-  background: rgba(14,159,110,0.15);
+  background: rgba(79, 168, 216, 0.15);
   color: var(--text);
 }
 
 /* ============================================
-   ANIMATIONS — Minimal
+   ANIMATIONS — Subtle
    ============================================ */
 
 @keyframes fade-in-up {
@@ -235,6 +269,22 @@ p {
 @keyframes underline-grow {
   0% { transform: scaleX(0); }
   100% { transform: scaleX(1); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* ============================================
@@ -258,7 +308,7 @@ p {
 }
 
 .navbar-scrolled-dark {
-  background: rgba(15, 23, 42, 0.9) !important;
+  background: rgba(10, 22, 40, 0.9) !important;
   backdrop-filter: blur(20px) !important;
   -webkit-backdrop-filter: blur(20px) !important;
 }
@@ -268,7 +318,7 @@ p {
    ============================================ */
 
 .editorial-image {
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   position: relative;
 }
@@ -279,6 +329,18 @@ p {
 
 .editorial-image:hover img {
   transform: scale(1.02);
+}
+
+/* ============================================
+   GRADIENT BACKGROUNDS
+   ============================================ */
+
+.bg-dark-teal {
+  background: linear-gradient(160deg, var(--dark) 0%, var(--dark-teal) 50%, var(--dark-medium) 100%);
+}
+
+.bg-subtle-gradient {
+  background: linear-gradient(180deg, var(--white) 0%, var(--off-white) 100%);
 }
 
 /* ============================================
@@ -305,7 +367,7 @@ p {
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--green);
+  background: var(--deep-teal);
   transform: scaleX(0);
   transition: transform 0.3s var(--ease);
 }
@@ -330,13 +392,13 @@ p {
 .research-item {
   display: block;
   padding: 20px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
   cursor: default;
   transition: all 0.3s var(--ease);
 }
 
 .research-item:first-child {
-  border-top: 1px solid rgba(0,0,0,0.06);
+  border-top: 1px solid rgba(0,0,0,0.04);
 }
 
 .research-item:hover {
@@ -353,7 +415,7 @@ p {
 }
 
 .research-item:hover .research-item-title {
-  color: var(--green);
+  color: var(--deep-teal);
 }
 
 .research-item-desc {
@@ -374,17 +436,32 @@ p {
 
 .pub-item {
   padding: 40px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
   transition: all 0.3s var(--ease);
 }
 
 .pub-item:first-child {
-  border-top: 1px solid rgba(0,0,0,0.06);
+  border-top: 1px solid rgba(0,0,0,0.04);
 }
 
 .pub-item:hover {
   padding-left: 8px;
 }
+
+/* ============================================
+   STAT ITEMS — Clean numbers
+   ============================================ */
+
+.stat-number {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.stat-number.blue { color: var(--serene-blue); }
+.stat-number.teal { color: var(--deep-teal); }
+.stat-number.emerald { color: var(--emerald); }
 
 /* ============================================
    RESPONSIVE
@@ -411,8 +488,9 @@ p {
 }
 
 @media (max-width: 640px) {
-  .btn-primary {
-    padding: 12px 24px;
+  .btn-primary,
+  .btn-secondary {
+    padding: 14px 28px;
     font-size: 14px;
   }
 }

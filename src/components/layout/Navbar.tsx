@@ -5,6 +5,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import LanguageToggle from '@/components/ui/LanguageToggle';
 
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
   const { t, language } = useLanguage();
@@ -54,6 +55,14 @@ export default function Navbar() {
           alignItems: 'center',
           gap: '12px',
         }}>
+          <div style={{ position: 'relative', width: '36px', height: '36px', flexShrink: 0 }}>
+            <Image
+              src="/images/logo.png"
+              alt="GR Nano Logo"
+              fill
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
           <div style={{
             display: 'flex',
             flexDirection: 'column',
@@ -66,7 +75,7 @@ export default function Navbar() {
               fontFamily: 'var(--font-outfit)',
               letterSpacing: '-0.04em',
             }}>
-              GR Nano
+              GR <span style={{ color: 'var(--deep-teal)' }}>Nano</span>
             </span>
           </div>
         </Link>
@@ -95,7 +104,7 @@ export default function Navbar() {
                   transition: 'color 0.3s var(--ease)',
                   fontFamily: language === 'ar' ? 'var(--font-cairo)' : 'var(--font-outfit)',
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text)'; }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--deep-teal)'; }}
                 onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
               >
                 {link.label}

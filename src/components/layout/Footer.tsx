@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
@@ -21,8 +22,8 @@ export default function Footer() {
 
   return (
     <footer style={{
-      background: 'var(--white)',
-      borderTop: '1px solid rgba(0,0,0,0.06)',
+      background: 'var(--off-white)',
+      borderTop: '1px solid rgba(0,0,0,0.04)',
       color: 'var(--text)',
     }}>
       <div style={{
@@ -39,13 +40,28 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{
-              fontWeight: 700,
-              fontSize: '24px',
-              fontFamily: 'var(--font-outfit)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
               marginBottom: '24px',
-              letterSpacing: '-0.04em',
             }}>
-              GR Nano
+              <div style={{ position: 'relative', width: '32px', height: '32px', flexShrink: 0 }}>
+                <Image
+                  src="/images/logo.png"
+                  alt="GR Nano Logo"
+                  fill
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
+              <div style={{
+                fontWeight: 700,
+                fontSize: '24px',
+                fontFamily: 'var(--font-outfit)',
+                letterSpacing: '-0.04em',
+                lineHeight: 1,
+              }}>
+                GR <span style={{ color: 'var(--deep-teal)' }}>Nano</span>
+              </div>
             </div>
             <p style={{
               color: 'var(--text-secondary)',
@@ -81,7 +97,7 @@ export default function Footer() {
                     transition: 'color 0.3s ease',
                     fontFamily: language === 'ar' ? 'var(--font-cairo)' : 'var(--font-outfit)',
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text)'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--deep-teal)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
                 >
                   {link.label}
@@ -114,7 +130,7 @@ export default function Footer() {
                     transition: 'color 0.3s ease',
                     fontFamily: language === 'ar' ? 'var(--font-cairo)' : 'var(--font-outfit)',
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--text)'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--deep-teal)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; }}
                 >
                   {link.label}
@@ -150,7 +166,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{
-          borderTop: '1px solid rgba(0,0,0,0.06)',
+          borderTop: '1px solid rgba(0,0,0,0.04)',
           paddingTop: '32px',
           display: 'flex',
           justifyContent: 'space-between',
